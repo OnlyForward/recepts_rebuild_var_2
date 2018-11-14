@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+<string-array name="vremya_prigotovleniya">
+<item>30м</item>
+<item>50м</item>
+<item>1ч 20м</item>
+<item>1ч</item>
+<item>2ч</item>
+<item>2ч 10м</item>
+<item>1ч 40м</item>
+<item>1ч</item>
+<item>2ч</item>
+<item>45м</item>
+<item>5ч</item>
+<item>1ч 30м</item>
+<item>50м</item>
+<item>40м</item>
+<item>3ч 20м</item>
+<item>1ч 25м</item>
+<item>1ч 55м</item>
+<item>55м</item>
+<item>1ч 5м</item>
+<item>45м</item>
+<item>1ч 10м</item>
+<item>5ч</item>
+<item>2ч</item>
+<item>1ч 45м</item>
+<item>1ч</item>
+<item>1ч</item>
+<item>1ч 15м</item>
+<item>1ч 15м</item>
+<item>null</item>
+<item>35м</item>
+<item>1ч</item>
+<item>2ч</item>
+<item>50м</item>
+<item>1ч 25м</item>
+<item>40м</item>
+<item>50м</item>
+<item>45м</item>
+<item>1ч 20м</item>
+<item>30м</item>
+<item>1ч 20м</item>
+<item>60м</item>
+<item>45м</item>
+<item>1ч 30м</item>
+<item>1ч 50м</item>
+<item>1ч 45м</item>
+<item>1ч</item>
+<item>2ч</item>
+<item>2ч 25м</item>
+<item>1ч 30м</item>
+<item>1ч</item>
+<item>45м</item>
+<item>1ч 15м</item>
+<item>1ч 35м</item>
+<item>1ч</item>
+<item>1ч</item>
+<item>1ч 50м</item>
+<item>1ч</item>
+<item>1ч 15м</item>
+<item>1ч 10м</item>
+</string-array>
+</resources>
+

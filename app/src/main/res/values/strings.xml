@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Рецепты запеканок</string>
+    <string name="it_works">it works</string>
+    <string name="izb_zap">Избранное</string>
+    <string name="description">Описание блюда</string>
+    <string name="ingridients">Ингридиенты</string>
+    <string name="recepts">Рецепт</string>
+</resources>
