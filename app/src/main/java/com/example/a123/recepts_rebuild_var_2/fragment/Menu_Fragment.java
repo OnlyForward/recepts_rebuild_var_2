@@ -2,8 +2,6 @@ package com.example.a123.recepts_rebuild_var_2.fragment;
 
 import android.app.Activity;
 import android.content.Intent;
-import android.content.res.AssetManager;
-import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
@@ -18,13 +16,11 @@ import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.example.a123.recepts_rebuild_var_2.model.Menu;
+import com.example.a123.recepts_rebuild_var_2.R;
 import com.example.a123.recepts_rebuild_var_2.activity.MenuActivity;
 import com.example.a123.recepts_rebuild_var_2.model.MenuLab;
-import com.example.a123.recepts_rebuild_var_2.R;
+import com.example.a123.recepts_rebuild_var_2.model.MenuReceipt;
 
-import java.io.IOException;
-import java.io.InputStream;
 import java.util.List;
 
 public class Menu_Fragment extends Fragment {
@@ -50,12 +46,7 @@ public class Menu_Fragment extends Fragment {
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-//        if(item.getItemId()==R.id.go_to_izb){
-//            Intent intent = new Intent(Menu_Fragment.this.getActivity(),IzbActivity.class);
-//            intent.putExtra(favorites,true);
-//            startActivityForResult(intent,favorites_code);
-//            return true;
-//        }
+
         return super.onOptionsItemSelected(item);
     }
 
@@ -92,7 +83,7 @@ public class Menu_Fragment extends Fragment {
     private void UpdateUI(){
 
         MenuLab menuLab = MenuLab.get(getActivity());
-        List<Menu> menus = menuLab.getMenus();
+        List<MenuReceipt> menus = menuLab.getMenus();
         if(mAdapter==null) {
             mAdapter = new MenuAdapter(menus);
             mMenuRecyclerView.setAdapter(mAdapter);
@@ -101,24 +92,11 @@ public class Menu_Fragment extends Fragment {
         }
     }
 
-    public static Drawable loadDrawable(AssetManager manager, String fileName) {
-        try{
-            InputStream in = manager.open(fileName);
-            Drawable drawable = Drawable.createFromStream(in, null);
-            in.close();
-            return drawable;
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-
-        return null;
-    }
-
     private class MenuAdapter extends RecyclerView.Adapter<MenuHolder>{
 
-        private List<Menu> mMenus;
+        private List<MenuReceipt> mMenus;
 
-        public MenuAdapter(List<Menu> menu){
+        public MenuAdapter(List<MenuReceipt> menu){
             mMenus = menu;
         }
 
@@ -131,7 +109,7 @@ public class Menu_Fragment extends Fragment {
 
         @Override
         public void onBindViewHolder(@NonNull MenuHolder holder, int position) {
-            Menu menus = mMenus.get(position);
+            MenuReceipt menus = mMenus.get(position);
             holder.bind(menus);
         }
 
@@ -142,7 +120,7 @@ public class Menu_Fragment extends Fragment {
     }
 
     private class MenuHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
-        private Menu mMenu;
+        private MenuReceipt mMenu;
         private TextView mTextView;
         private ImageView mImageView;
         private ImageView mIzbImage;
@@ -156,12 +134,10 @@ public class Menu_Fragment extends Fragment {
             mIzbImage = (ImageView)itemView.findViewById(R.id.red_flag1);
         }
 
-        public void bind(Menu menu){
+        public void bind(MenuReceipt menu){
             mMenu = menu;
             mTextView.setText(mMenu.getTitle());
-            AssetManager manager = getActivity().getAssets();
-            Drawable drawable = loadDrawable(getActivity().getAssets(), "icon/"+mMenu.getPhoto());
-            mImageView.setImageDrawable(drawable);
+            mImageView.setImageBitmap(menu.getPhoto());
             //mIzbImage.setVisibility(mMenu.getVisibleornot());
         }
 

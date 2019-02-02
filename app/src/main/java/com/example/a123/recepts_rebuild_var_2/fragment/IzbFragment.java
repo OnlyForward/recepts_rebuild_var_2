@@ -23,11 +23,11 @@ public class IzbFragment extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.recycler_izb,container,false);
+        View view = inflater.inflate(R.layout.list_fragment,container,false);
 
         mAdapter = new ReceptsAdapter();
 
-        mRecyclerView = (RecyclerView)view.findViewById(R.id.reycler_izb);
+        mRecyclerView = (RecyclerView)view.findViewById(R.id.reycler_view);
         mRecyclerView.setLayoutManager(new GridLayoutManager(getActivity(),2));
         mRecyclerView.setAdapter(mAdapter);
 
