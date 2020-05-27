@@ -24,6 +24,11 @@ jobs:
       uses: actions/setup-java@v1
       with:
         java-version: ${{ matrix.java }}
+    
+    - name: Grant execute permission for gradlew (*nix or MacOS)
+      working-directory: mekhq
+      run: chmod +x gradlew
+      if: runner.os != 'Windows'
       
     - name: Build with Gradle
       working-directory: recepts_rebuild_var_2
