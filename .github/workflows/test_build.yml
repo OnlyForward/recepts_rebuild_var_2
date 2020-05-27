@@ -12,7 +12,7 @@ jobs:
 
     runs-on: ${{ matrix.os }}
 
-    name: Build calorie counter CI ${{ matrix.os }} on Java ${{ matrix.java }}
+    name: Build calorie counter CI ${{ matrix.os }} on Java ${{ matrix.java }} 
 
     steps:
     - uses: actions/checkout@v2
